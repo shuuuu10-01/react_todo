@@ -2,7 +2,11 @@ import React from 'react'
 
 const Todo:React.FC = () => {
   return (
-    <p>this is todo page.</p>
+    <form>
+      <p>todo</p>
+      <input type="text"/>
+      <input type="submit" value="追加"/>
+    </form>
   )
 }
 
