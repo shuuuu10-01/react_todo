@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
 import TextInput from '../../components/TextInput'
 
+import { RootState } from '../../store/store'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { addTodo } from '../../features/todos/todosSlice'
+
 const Todo:React.FC = () => {
   const [todoText, setTodoText] = useState('')
+  const todos = useSelector((state: RootState) => state.todos)
+  console.log(todos, "check")
+
+  const dispatch = useDispatch()
+  const handleSubmit = () => {
+    dispatch(addTodo(todoText))
+    setTodoText("")
+  }
 
   return (
-    <form>
+    <div>
       <p>{todoText}</p>
       <TextInput
         title='todo'
@@ -14,8 +27,8 @@ const Todo:React.FC = () => {
         value={todoText}
         onChange={(value) => setTodoText(value)}
       />
-      <input type="submit" value="追加"/>
-    </form>
+      <button onClick={() => handleSubmit()} >追加</button>
+    </div>
   )
 }
 
