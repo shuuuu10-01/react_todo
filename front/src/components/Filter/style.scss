@@ -1,0 +1,14 @@
+span {
+  color: rgb(0, 115, 255);
+  opacity: 0.5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.focus {
+    color: blue;
+    opacity: 1;
+  }
+}

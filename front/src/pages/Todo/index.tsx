@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TextInput from '../../components/TextInput'
+import { Filter } from '../../components/Filter'
 
 import { RootState } from '../../store/store'
 import { useSelector, useDispatch } from 'react-redux'
@@ -19,6 +20,7 @@ const Todo:React.FC = () => {
 
   return (
     <div>
+      <Filter />
       <p>{todoText}</p>
       <TextInput
         title='todo'
